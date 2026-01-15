@@ -33,7 +33,6 @@
     --font-pardao: 'Montserrat', sans-serif;
 }
 
-
 body {
     font-family: var(--font-pardao);
     background-color: #f8f9fa;
@@ -51,6 +50,24 @@ img {
     max-width: 100%;
     display: block;
     height: auto;
+}
+
+/* Configuração do header */
+.site-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    background: linear-gradient(to top, var(--cor3)0%, var(--cor0)100%);
+}
+
+/* O logo centralizado com suas dimensões */
+.header-logo {
+    width: 250px;
+    height: 208px;
+    object-fit: contain;
+    display: block;
 }
 
 /* Estilo do Menu de Navegação */
@@ -77,6 +94,157 @@ nav a:hover {
     color: var(--cor0);
 }
 
+/* Container principal organizando os dois lados */
+.main-layout {
+    display: flex;
+    justify-content: center;
+    gap: 50px; /* Espaço entre o texto e as fotos */
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+/* Onde estão seus textos */
+.content-wrapper {
+    flex: 2; /* Ocupa o dobro de espaço do aside */
+    color: var(--cor3);
+}
+
+/* Estilização da Coluna Lateral */
+.sidebar-equipamentos {
+    flex: 1;
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 25px;
+    border-radius: 15px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+ }
+
+.sidebar-equipamentos h3 {
+    color: var(--cor0);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.equipamento-item {
+   margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05); /* Um brilho sutil de fundo */
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.equipamento-item img {
+  max-width: 100%;
+    height: auto;          /* Deixa o navegador decidir a altura com base na largura */
+    max-height: 150px;     /* Mas limita para não ficar gigante */
+    object-fit: contain;
+}
+
+.equipamento-item img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+.equipamento-item p {
+   margin-top: 12px;
+    color: var(--cor0);
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Ajuste para Celulares (Empilha um sobre o outro) */
+@media (max-width: 768px) {
+  .main-layout {
+        flex-direction: column; /* Empilha as colunas */
+    }
+    
+    .sidebar-equipamentos {
+        position: static; /* Remove o efeito sticky no celular */
+        order: 2;         /* Garante que fique embaixo do texto */
+    }
+}
+
+#quem-somos h1 {
+    color: var(--cor3);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    border-left: 5px solid var(--cor1); /* Detalhe vertical na cor de destaque */
+    padding-left: 15px;
+}
+
+#nossa-qualidade {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: var(--cor0); /* Fundo suave para destacar a seção */
+    border-radius: 10px;
+}
+
+#nossa-qualidade ul {
+    list-style: none;
+    padding: 0;
+}
+
+#nossa-qualidade li {
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+}
+
+/* Ícone customizado antes da lista usando a cor da paleta */
+#nossa-qualidade li::before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    color: var(--cor1);
+    font-weight: bold;
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 3px solid var(--cor1);
+    margin: 20px 0;
+    padding-left: 20px;
+    color: var(--cor2);
+}
+
+#assinatura {
+    margin-top: 80px;
+    padding-top: 25px;
+    border-top: 1px solid var(--cor2);
+}
+
+#assinatura p strong {
+    font-size: 1.2rem;
+    color: var(--cor1);
+}
+
+.chamada-servicos {
+    font-style: italic;
+    color: var(--cor3);
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
+.chamada-servicos a {
+    color: var(--cor1); /* Cor de destaque da sua paleta */
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s ease;
+    display: inline-block; /* Permite efeitos de hover melhores */
+}
+
+.chamada-servicos a:hover {
+    color: var(--cor2);
+    border-bottom: 2px solid var(--cor2);
+    transform: translateX(5px); /* Pequeno movimento para a direita no hover */
+}
+
 /* footer */
 footer {
     background-color: var(--cor3);
@@ -97,6 +265,15 @@ footer {
 .footer-col {
     flex: 1;
     min-width: 200px;
+}
+
+.footer-col img {
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    max-width: 150px;
+    margin-bottom: 15px;
 }
 
 /* Estilo dos títulos das colunas */

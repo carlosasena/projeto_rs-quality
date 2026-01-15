@@ -9,84 +9,100 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <img src="image/Logo.jpg" alt="Logo da empresa RS Quality">
+    <header class="site-header">
+        <div>
+            <a href="index.html">
+                <img src="image/novo_logotipos-pq.png" alt="Logotipo" class="header-logo">
+            </a>
+        </div>
     </header>
-    <nav>
+    <nav class="main-nav">
         <a href="index.html">Home</a>
         <a href="empresa.html">Sobre Nós</a>
         <a href="servico.html">Serviços</a>
         <a href="contato.html">Entre em Contato</a>
     </nav>
-    <main>
-        <section id="quem-somos">
-            <h1>Na RS Quality, sua obra não pode parar.</h1>
-            <p>
-                Há mais de <strong>30 anos</strong>, atuamos no mercado de vendas, locação e manutenção de máquinas, equipamentos e soluções eletrotécnicas para a construção civil.
-            </p>
-            <p>
-                
-                Nossa trajetória foi construída dentro do canteiro de obras, enfrentando prazos, desafios técnicos e a necessidade constante de manter tudo funcionando. Com o tempo, a <strong>RS Quality </strong>se consolidou como referência em confiabilidade, segurança elétrica e suporte técnico especializado.
-            </p>
-        </section>
-        <section id="nossa-qualidade">
-            <h2>compromisso e Rigor Técnico</h2>
-            <ul>
-                <li>Cada equipamento entregue é rigorosamente inspecionado.</li>
-                <li>Cada serviço segue normas técnicas e boas práticas de engenharia.</li>
-                <li>Tudo para garantir continuidade operacional, produtividade e segurança.</li>
-            </ul>
-            <blockquote>
-                "Mais do que máquinas, entregamos soluções que mantêm a obra em movimento."
-            </blockquote>
-        </section>
-        <section id="assinatura">
-            <p><strong>RS Quality</strong></p>
-            <p>Tradição técnica, engenharia moderna e compromisso com resultados.</p>
-        </section>
+    <main class="main-layout">
+        <div class="content-wrapper">
+            <section id="quem-somos">
+                <h1>Na RS Quality, sua obra não pode parar.</h1>
+                <p>Há mais de <strong>30 anos</strong>, atuamos no mercado de vendas, locação e manutenção de máquinas, equipamentos e soluções eletrotécnicas para a construção civil.</p>
+                <p>Nossa trajetória foi construída dentro do canteiro de obras... se consolidou como referência em confiabilidade.</p>
+                <p>Nossa infraestrutura é planejada para atender desde reformas residenciais até grandes complexos industriais, garantindo que a tecnologia e a robustez caminhem juntas.</p>
+            </section>
+            <section id="nossa-qualidade">
+                <h2>Compromisso e Rigor Técnico</h2>
+                <p>Trabalhamos com marcas líderes que são sinônimo de força e precisão, assegurando que cada locação ou venda resulte em ganho real de velocidade para o cronograma da sua obra.</p>
+                <br>
+                <ul>
+                    <li>&check;Cada equipamento entregue é rigorosamente inspecionado.</li>
+                    <li>&check;Cada serviço segue normas técnicas e boas práticas de engenharia.</li>
+                    <li>&check;Tudo para garantir continuidade operacional, produtividade e segurança.</li>
+                </ul>
+                <blockquote>
+                    "Mais do que máquinas, entregamos soluções que mantêm a obra em movimento."
+                </blockquote>
+            </section>
+            <section id="assinatura">
+                <p><strong>RS Quality Engenharia & Soluções</strong></p>
+                <p>Tradição técnica, engenharia moderna e compromisso com resultados.</p>
+                <p class="chamada-servicos">
+                    Conheça ao lado alguns dos pilares da nossa operação e 
+                    <a href="servicos.html">veja nossa linha completa de equipamentos e serviços →</a>
+                </p>
+            </section>
+        </div>
+        <aside class="sidebar-equipamentos">
+            <h3>Nossos Equipamentos</h3>
+            <div class="equipamento-item">
+                <img src="image/martelete.png" alt="Martelete Profissional">
+                <p>Marteletes</p>
+            </div>
+            <div class="equipamento-item">
+                <img src="image/betoneira.png" alt="Betoneira 400L">
+                <p>Betoneiras</p>
+            </div>
+            <div class="equipamento-item">
+                <img src="image/compactador.png" alt="Compactador de Solo">
+                <p>Compactadores</p>
+            </div>
+        </aside>
     </main>
     <footer>
-            <div class="footer-container">
-        
-        <div class="footer-col">
-            <img src="image/Logo-RS_pq.png" alt="RS Quality Logotipo" class="logo-footer">
-            <p>Tradição técnica e compromisso com resultados.</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Siga-nos</h4>
-            <div class="social-links">
-                <p><a href="https://www.instagram.com/">Instagram</a></p>
-                <p><a href="https://www.facebook.com/?locale=pt_BR">Facebook</a></p>
-                <p><a href="https://www.linkedin.com/">LinkedIn</a></p>
+        <div class="footer-container">
+            <div class="footer-col">
+                <img src="image/novo_logotipos-pq.png" alt="Logotipo" class="logo-footer">
+                <p>Tradição técnica e compromisso com resultados.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Siga-nos</h4>
+                <div class="social-links">
+                    <p><a href="https://www.instagram.com/">Instagram</a></p>
+                    <p><a href="https://www.facebook.com/?locale=pt_BR">Facebook</a></p>
+                    <p><a href="https://www.linkedin.com/">LinkedIn</a></p>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Contato</h4>
+                <address>
+                    <p>Bonsucesso, Guarulhos - SP</p>
+                    <p>(11)   2436-4845</p>
+                    <p>(11) 958 355 851</p>
+                    <a href="mailto:atendimento@resseng.com.br" class="contact-link">atendimento@resseng.com.br</a>
+                </address>
+            </div>
+            <div class="footer-col">
+                <h4>Contato & Desenvolvedor</h4>
+                <p>Projeto criado por:</p>
+                <p><strong>Carlos Alberto De Sena</strong></p>
+                <a href="https://github.com/carlosasena" target="_blank" rel="noopener noreferrer" class="portifolio-btn">Visite meu GitHub</a>
+                <a href="mailto:carlossenatech@gmail.com" target="_blank" class="contact-link">
+                carlossenatech@gmail.com</a></a>
             </div>
         </div>
-
-        <div class="footer-col">
-            <h4>Contato</h4>
-            <address>
-                <p>Bonsucesso, Guarulhos - SP</p>
-                <p>(11)   2436-4845</p>
-                <p>(11) 958 355 851</p>
-                <a href="mailto:atendimento@resseng.com.br" class="contact-link">atendimento@resseng.com.br</a>
-            </address>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RS Quality - Todos os direitos reservados.</p>
         </div>
-
-        <div class="footer-col">
-            <h4>Contato & Desenvolvedor</h4>
-            <p>Projeto criado por:</p>
-            <p><strong>Carlos Alberto De Sena</strong></p>
-            <a href="https://github.com/carlosasena" target="_blank" rel="noopener noreferrer" class="portifolio-btn">Visite meu GitHub</a>
-            <a href="mailto:carlossenatech@gmail.com" target="_blank" class="contact-link">
-            carlossenatech@gmail.com</a></a>
-
-        </div>
-
-    </div>
-
-    <div class="footer-bottom">
-        <p>&copy; 2026 RS Quality - Todos os direitos reservados.</p>
-    </div>
     </footer>
 </body>
 </html>
