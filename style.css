@@ -245,6 +245,47 @@ blockquote {
     transform: translateX(5px); /* Pequeno movimento para a direita no hover */
 }
 
+/* Container da Sidebar */
+.sidebar-mosaico {
+    flex: 1;
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 20px;
+    border-radius: 15px;
+    height: fit-content; /* Ele cresce conforme as seções ao lado */
+    position: sticky;
+    top: 20px;
+}
+
+/* Configuração do Grid do Mosaico */
+.mosaico-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Divide em 2 colunas iguais */
+    grid-auto-rows: 120px; /* Define uma altura base para as linhas */
+    gap: 10px;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Não deixa a imagem esticar */
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.foto-item img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Classes para dar variedade ao mosaico */
+.foto-item.grande {
+    grid-row: span 2; /* Ocupa duas linhas de altura */
+}
+
+.foto-item.larga {
+    grid-column: span 2; /* Ocupa as duas colunas de largura */
+}
+
 /* footer */
 footer {
     background-color: var(--cor3);
