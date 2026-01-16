@@ -112,7 +112,7 @@ nav a:hover {
 
 /* Estilização da Coluna Lateral */
 .sidebar-equipamentos {
-    flex: 1;
+   flex: 1;
     background: linear-gradient(to bottom, var(--cor3), var(--cor2));
     padding: 25px;
     border-radius: 15px;
@@ -132,16 +132,33 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.05); /* Um brilho sutil de fundo */
-    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Um brilho sutil de fundo */
+    padding: 15px;
     border-radius: 10px;
 }
 
 .equipamento-item img {
-  max-width: 100%;
+     max-width: 100%;
     height: auto;          /* Deixa o navegador decidir a altura com base na largura */
     max-height: 150px;     /* Mas limita para não ficar gigante */
     object-fit: contain;
+}
+
+/* CONTAINER DO SLIDE (A MOLDURA) */
+.slider-fade-container {
+    width: 100%;
+    height: 150px; /* Mesma altura que você usava antes */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-fade-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
 }
 
 .equipamento-item img:hover {
@@ -284,6 +301,79 @@ blockquote {
 
 .foto-item.larga {
     grid-column: span 2; /* Ocupa as duas colunas de largura */
+}
+
+/* Layout Lateral */
+.sidebar-slide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre os 3 quadros */
+}
+
+.quadro-destaque {
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 15px;
+    border-radius: 15px;
+    text-align: center;
+    border: 1px solid var(--cor0);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.slideshow-titulo-menor {
+    color: var(--cor0);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* Container do Slide (Área de Máscara) */
+.slider-vertical-container {
+    width: 100%;
+    height: 250px; /* Ajuste para a altura que desejar, ex: 300px */
+    overflow: hidden; /* ESSENCIAL: corta o que está fora */
+    position: relative;
+    background-color: #fff;
+    border: 2px solid var(--cor0);
+    border-radius: 10px;
+}
+
+/* Wrapper que movimenta as imagens */
+.slider-vertical-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0; /* Começam invisíveis */
+    transition: opacity 1s ease-in-out, transform 0.3s ease; /* Fade + seu hover */
+}
+
+/* Classe que o JavaScript vai adicionar para mostrar a foto */
+.slide-img.active {
+    opacity: 1;
+    z-index: 1; /* Garante que a foto ativa fique na frente */
+}
+
+/* Seu efeito de hover original adaptado */
+.slide-img.active:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .sidebar-slide {
+        position: static;
+        order: 2; /* Fica abaixo do texto no celular */
+    }
 }
 
 /* footer */
