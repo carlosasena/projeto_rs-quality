@@ -104,6 +104,60 @@ nav a:hover {
     padding: 0 20px;
 }
 
+/* Container Pai */
+.conteudo-principal-flex {
+    display: flex;
+    justify-content: space-between; /* Empurra o aside para a extremidade */
+    gap: 50px;                      /* Espaçamento generoso entre as colunas */
+    max-width: 1250px;              /* Um pouco mais largo para caber tudo bem */
+    margin: 40px auto;
+    padding: 0 30px;
+    align-items: flex-start;
+}
+
+/* Coluna de Texto (Esquerda) */
+.fale-principal {
+    flex: 1.8;      /* Diminuímos um pouco para sobrar mais para o lado */
+    min-width: 0;   /* Evita que o texto empurre o aside para fora */
+}
+
+/* Aside (Direita) - O segredo para não ficar apertado */
+.sidebar-equipamentos {
+    flex: 1;              /* Proporção equilibrada */
+    min-width: 350px;     /* Garante que o formulário nunca fique menor que 350px */
+    max-width: 400px;     /* Evita que fique largo demais em telas gigantes */
+    
+    /* Mantendo o visual padronizado */
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 30px;        /* Aumentei o padding interno para dar respiro */
+    border-radius: 20px;
+    position: sticky;
+    top: 30px;
+    border: 1px solid var(--cor0);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Ajuste nos campos para acompanhar o novo respiro */
+.form-rs-quality {
+    gap: 20px; /* Mais espaço entre um campo e outro */
+}
+
+/* Responsividade: Quando a tela for pequena demais para os dois lados */
+@media (max-width: 1024px) {
+    .conteudo-principal-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .fale-principal, 
+    .sidebar-equipamentos {
+        width: 100%;
+        max-width: 700px; /* No celular ele fica centralizado e elegante */
+        min-width: unset;
+    }
+}
+
 /* Onde estão seus textos */
 .content-wrapper {
     flex: 2; /* Ocupa o dobro de espaço do aside */
@@ -192,6 +246,17 @@ nav a:hover {
     margin-bottom: 20px;
     border-left: 5px solid var(--cor1); /* Detalhe vertical na cor de destaque */
     padding-left: 15px;
+}
+
+#quem-somos ul{
+    margin-left: 40px;
+    padding-left: 20px;
+    line-height: 1.8;
+}
+
+#quem-somos ul li {
+    margin-bottom: 2.5px;
+    padding-bottom: 2.5px;
 }
 
 #nossa-qualidade {
