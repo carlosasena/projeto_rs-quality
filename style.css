@@ -1,8 +1,13 @@
 /* ============================================================
-                CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   RS QUALITY - STYLESHEET PRINCIPAL
+   Organizado por seções: Reset > Variáveis > Header > Nav > Main > Footer > Responsivo
    ============================================================ */
+
 @charset "UTF-8";
-/* Reset e Box-Sizing */
+
+/* ============================================================
+   1. RESET E FONTES
+   ============================================================ */
 * {
     margin: 0;
     padding: 0;
@@ -11,31 +16,34 @@
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('./fonts/montserrat/Montserrat-Light.ttf') format('ttf');
-    font-size: 400;
+    src: url('./fonts/montserrat/Montserrat-Light.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @font-face {
     font-family: 'Montserrat';
-    src: url('./fonts/montserrat/Montserrat-SemiBold.ttf') format('ttf');
+    src: url('./fonts/montserrat/Montserrat-SemiBold.ttf') format('truetype');
     font-weight: 700;
     font-style: normal;
     font-display: swap;
 }
-/* Configurações Globais (SEO & UX) */
+
+/* ============================================================
+   2. VARIÁVEIS E CONFIGURAÇÕES GLOBAIS
+   ============================================================ */
 :root {
     scroll-behavior: smooth;
-    --cor0: #968d4c; /* Oliva/Dourado mais claro */
+    --cor0: #968d4c; /* Oliva/Dourado claro */
     --cor1: #8b924c; /* Oliva/Dourado médio */
     --cor2: #414358; /* Azul acinzentado */
-    --cor3: #111132; /* Azul profundo (a mais escura) */    
-    --font-pardao: 'Montserrat', sans-serif;
+    --cor3: #111132; /* Azul profundo */    
+    --font-padrao: 'Montserrat', sans-serif;
 }
 
 body {
-    font-family: var(--font-pardao);
+    font-family: var(--font-padrao);
     background-color: #f8f9fa;
     color: var(--cor2);  
     overflow-x: hidden;
@@ -45,26 +53,6 @@ body {
     line-height: 1.6;  
 }
 
-/* ============================================================
-                               HEADER
-   ============================================================ */
-/* Configuração do header */
-.site-header {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 30px 0;
-    background: linear-gradient(to top, var(--cor3)0%, var(--cor0)100%);
-}
-/* O logo centralizado com suas dimensões */
-.header-logo {
-    width: 250px;
-    height: 208px;
-    object-fit: contain;
-    display: block;
-}
-/* Imagens Responsivas */
 img {
     max-width: 100%;
     display: block;
@@ -72,59 +60,84 @@ img {
 }
 
 /* ============================================================
-                               NAV
+   3. HEADER
    ============================================================ */
-/* Estilo do Menu de Navegação */
-nav {
+.site-header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0;
+    background: linear-gradient(to top, var(--cor3) 0%, var(--cor0) 100%);
+}
+
+.header-logo {
+    width: 250px;
+    height: 208px;
+    object-fit: contain;
+    display: block;
+}
+
+/* ============================================================
+   4. NAVEGAÇÃO
+   ============================================================ */
+nav,
+.main-nav {
     background-color: var(--cor3);
     text-align: center;
     padding: 10px 0;
     position: sticky;
-    top: o;
+    top: 0;
     z-index: 100;
 }
 
-nav a {
+nav a,
+.main-nav a {
     color: white;
     text-decoration: none;
     margin: 0 15px;
     font-weight: 700;
     font-size: 0.9rem;
     text-transform: uppercase;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
-nav a:hover {
+nav a:hover,
+.main-nav a:hover {
     color: var(--cor0);
 }
 
 /* ============================================================
-                               MAIN
+   5. LAYOUT PRINCIPAL (Main)
    ============================================================ */
-/* Container principal organizando os dois lados */
 .main-layout {
     display: flex;
     justify-content: center;
-    gap: 50px; /* Espaço entre o texto e as fotos */
+    gap: 50px;
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
-/* Onde estão seus textos */
+
 .content-wrapper {
-    flex: 2; /* Ocupa o dobro de espaço do aside */
+    flex: 2;
     color: var(--cor3);
 }
 
+/* ============================================================
+   6. SEÇÕES DE CONTEÚDO
+   ============================================================ */
+
+/* Seção Quem Somos */
 #quem-somos h1 {
     color: var(--cor3);
     font-size: 2.2rem;
     margin-bottom: 20px;
-    border-left: 5px solid var(--cor1); /* Detalhe vertical na cor de destaque */
+    border-left: 5px solid var(--cor1);
     padding-left: 15px;
 }
 
-#quem-somos ul{
+#quem-somos ul {
     margin-left: 40px;
     padding-left: 20px;
     line-height: 1.8;
@@ -135,11 +148,16 @@ nav a:hover {
     padding-bottom: 2.5px;
 }
 
+/* Seção Nossa Qualidade */
 #nossa-qualidade {
     margin-top: 40px;
     padding: 20px;
-    background-color: var(--cor0); /* Fundo suave para destacar a seção */
+    background-color: var(--cor0);
     border-radius: 10px;
+}
+
+#nossa-qualidade h2 {
+    margin-bottom: 15px;
 }
 
 #nossa-qualidade ul {
@@ -153,9 +171,8 @@ nav a:hover {
     position: relative;
 }
 
-/* Ícone customizado antes da lista usando a cor da paleta */
 #nossa-qualidade li::before {
-    content: "✔";
+    content: "✓";
     position: absolute;
     left: 0;
     color: var(--cor1);
@@ -170,6 +187,7 @@ blockquote {
     color: var(--cor2);
 }
 
+/* Seção Assinatura */
 #assinatura {
     margin-top: 80px;
     padding-top: 25px;
@@ -189,44 +207,36 @@ blockquote {
 }
 
 .chamada-servicos a {
-    color: var(--cor1); /* Cor de destaque da sua paleta */
+    color: var(--cor1);
     text-decoration: none;
     font-weight: bold;
     border-bottom: 2px solid transparent;
     transition: all 0.3s ease;
-    display: inline-block; /* Permite efeitos de hover melhores */
+    display: inline-block;
 }
 
 .chamada-servicos a:hover {
     color: var(--cor2);
     border-bottom: 2px solid var(--cor2);
-    transform: translateX(5px); /* Pequeno movimento para a direita no hover */
+    transform: translateX(5px);
 }
-/* Aside (Direita) - O segredo para não ficar apertado */
+
+/* ============================================================
+   7. SIDEBAR - EQUIPAMENTOS
+   ============================================================ */
 .sidebar-equipamentos {
-    flex: 1;              /* Proporção equilibrada */
-    min-width: 350px;     /* Garante que o formulário nunca fique menor que 350px */
-    max-width: 400px;     /* Evita que fique largo demais em telas gigantes */
-    
-    /* Mantendo o visual padronizado */
+    flex: 1;
+    min-width: 350px;
+    max-width: 400px;
     background: linear-gradient(to bottom, var(--cor3), var(--cor2));
-    padding: 30px;        /* Aumentei o padding interno para dar respiro */
+    padding: 30px;
     border-radius: 20px;
     position: sticky;
     top: 30px;
+    height: fit-content;
     border: 1px solid var(--cor0);
     box-shadow: 0 10px 30px rgba(0,0,0,0.15);
 }
-/* Estilização da Coluna Lateral */
-.sidebar-equipamentos {
-   flex: 1;
-    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
-    padding: 25px;
-    border-radius: 15px;
-    height: fit-content;
-    position: sticky;
-    top: 20px;
- }
 
 .sidebar-equipamentos h3 {
     color: var(--cor0);
@@ -235,27 +245,21 @@ blockquote {
 }
 
 .equipamento-item {
-   margin-bottom: 25px;
+    margin-bottom: 25px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: rgba(255, 255, 255, 0.1); /* Um brilho sutil de fundo */
+    background: rgba(255, 255, 255, 0.1);
     padding: 15px;
     border-radius: 10px;
 }
-.equipamento-item p {
-   margin-top: 12px;
-    color: var(--cor0);
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
 
 .equipamento-item img {
-     max-width: 100%;
-    height: auto;          /* Deixa o navegador decidir a altura com base na largura */
-    max-height: 150px;     /* Mas limita para não ficar gigante */
+    max-width: 100%;
+    height: auto;
+    max-height: 150px;
     object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .equipamento-item img:hover {
@@ -263,16 +267,344 @@ blockquote {
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
 }
 
+.equipamento-item p {
+    margin-top: 12px;
+    color: var(--cor0);
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
 
 /* ============================================================
-                            FOOTER
+   8. SIDEBAR - MOSAICO (página Empresa)
    ============================================================ */
+.sidebar-mosaico {
+    flex: 1;
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 20px;
+    border-radius: 15px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
 
+.sidebar-mosaico h3 {
+    color: var(--cor0);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.mosaico-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+    gap: 10px;
+}
+
+.foto-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.foto-item img:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+.foto-item.grande {
+    grid-row: span 2;
+}
+
+.foto-item.larga {
+    grid-column: span 2;
+}
+
+/* ============================================================
+   9. SLIDER FADE (página Serviços)
+   ============================================================ */
+.slider-fade-container {
+    width: 100%;
+    height: 150px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-fade-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.slide-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 1s ease-in-out, transform 0.3s ease;
+}
+
+.slide-img.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide-img.active:hover {
+    transform: translateY(-5px);
+    cursor: pointer;
+}
+
+/* ============================================================
+   10. PÁGINA CONTATO
+   ============================================================ */
+.fale-principal {
+    flex: 1.8;
+    min-width: 0;
+}
+
+.fale-header {
+    margin-bottom: 30px;
+}
+
+.titulo-principal {
+    color: var(--cor3);
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    border-left: 5px solid var(--cor1);
+    padding-left: 15px;
+}
+
+.subtitulo-destaque {
+    color: var(--cor1);
+    font-size: 1.1rem;
+    font-style: italic;
+}
+
+.fale-conteudo {
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.fale-conteudo p {
+    margin-bottom: 15px;
+}
+
+.frase-efeito {
+    background-color: var(--cor0);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 30px 0;
+    text-align: center;
+}
+
+.frase-efeito p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--cor3);
+    margin-bottom: 15px;
+}
+
+.badges-foco {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.badges-foco span {
+    background-color: var(--cor3);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.por-que-rs {
+    margin: 30px 0;
+}
+
+.por-que-rs h3 {
+    color: var(--cor3);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.lista-vantagens {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-vantagens li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.lista-vantagens li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--cor1);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.chamada-final {
+    margin-top: 40px;
+}
+
+.quadro-chamada {
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+}
+
+.quadro-chamada h3 {
+    color: var(--cor0);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.quadro-chamada p {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.botoes-acao {
+    margin-top: 20px;
+}
+
+.btn-rs {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--cor0);
+    color: var(--cor3);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.btn-rs:hover {
+    background-color: var(--cor1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* Formulário de Contato */
+.quadro-destaque {
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid var(--cor0);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.slideshow-titulo-menor {
+    color: var(--cor0);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.form-rs-quality {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.campo-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.campo-grupo label {
+    color: var(--cor0);
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.campo-grupo input,
+.campo-grupo textarea {
+    padding: 12px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 5px;
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    font-family: var(--font-padrao);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.campo-grupo input:focus,
+.campo-grupo textarea:focus {
+    outline: none;
+    border-color: var(--cor0);
+    background-color: rgba(255,255,255,0.15);
+}
+
+.campo-grupo input::placeholder,
+.campo-grupo textarea::placeholder {
+    color: rgba(255,255,255,0.5);
+}
+
+.btn-acao-rs {
+    padding: 12px 20px;
+    background-color: var(--cor0);
+    color: var(--cor3);
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-acao-rs:hover {
+    background-color: var(--cor1);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-whatsapp-aside {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #25D366;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-whatsapp-aside:hover {
+    background-color: #128C7E;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* ============================================================
+   11. FOOTER
+   ============================================================ */
 footer {
     background-color: var(--cor3);
     color: white;
     padding: 60px 20px 20px 20px;
-    font-family: var(--font-pardao);
+    font-family: var(--font-padrao);
 }
 
 .footer-container {
@@ -289,7 +621,8 @@ footer {
     min-width: 200px;
 }
 
-.footer-col img {
+.footer-col img,
+.logo-footer {
     margin-top: -30px;
     position: relative;
     z-index: 1;
@@ -297,7 +630,7 @@ footer {
     max-width: 150px;
     margin-bottom: 15px;
 }
-/* Estilo dos títulos das colunas */
+
 .footer-col h4 {
     color: var(--cor0);
     margin-bottom: 20px;
@@ -305,7 +638,7 @@ footer {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-/* Lista de links e redes sociais */
+
 .footer-col ul {
     list-style: none;
 }
@@ -314,67 +647,53 @@ footer {
     margin-bottom: 10px;
 }
 
-.footer-col a{
+.footer-col a,
+.contact-link {
     color: #ccc;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.footer-col a:hover {
+.footer-col a:hover,
+.contact-link:hover {
     color: var(--cor0);
 }
-/* Estilo para coluna de enderenço */
+
+.social-links p {
+    margin-bottom: 8px;
+}
+
 address {
     font-style: normal;
     line-height: 1.8;
     color: #ddd;
 }
-/* Coluna de Desenvolvimento */
-.dev-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 12px;
-    border: 1px solid var(--cor1);
-    border-radius: 4px;
-    font-size: 0.85rem;
-}
-/* Estilo geral da coluna */
+
 .footer-col p {
     margin-bottom: 8px;
     font-size: 14px;
 }
-/* Estilo específico para o E-mail */
-.footer-email {
-    display: block;
-    margin-bottom: 15px;
-    color: #00a8ff; /* Cor de destaque */
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: opacity 0.3s;
-}
 
-.footer-email:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-}
-/* Botão do GitHub - Estilo "Clean" */
-.footer-portfolio {
+.portifolio-btn,
+.portfolio-btn {
     display: inline-block;
-    padding: 8px 16px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #24292e;
+    color: #ffffff;
     text-decoration: none;
     border-radius: 4px;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease;
 }
 
-.footer-portfolio:hover {
-    background-color: #fff;
-    color: #000;
+.portifolio-btn:hover,
+.portfolio-btn:hover {
+    background-color: #444d56;
+    color: #fff;
 }
-/* Rodapé final Copyright */
+
 .footer-bottom {
     max-width: 1200px;
     margin: 40px auto 0 auto;
@@ -384,216 +703,117 @@ address {
     font-size: 0.8rem;
     color: #888;
 }
-/* Botão do GitHub destacado */
-.portfolio-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #24292e; /* Cor clássica do GitHub */
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background 0.3s ease;
-}
-
-.portfolio-btn:hover {
-    background-color: #444d56;
-    color: #fff;
-}
 
 /* ============================================================
-                            @MEDIA
+   12. RESPONSIVIDADE
    ============================================================ */
-/* Responsividade:main-layout (index.html)  */
-@media (max-width: 768px) {
-  .main-layout {
-        flex-direction: column; /* Empilha as colunas */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    .main-layout {
+        gap: 30px;
     }
     
     .sidebar-equipamentos {
-        position: static; /* Remove o efeito sticky no celular */
-        order: 2;         /* Garante que fique embaixo do texto */
-    }
-}
-/* Responsividade:main (contato.html) */
-@media (max-width: 1024px) {
-    .conteudo-principal-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
+        min-width: 300px;
     }
     
-    .fale-principal, 
+    .fale-principal {
+        flex: 1;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    /* Layout geral */
+    .main-layout {
+        flex-direction: column;
+    }
+    
+    .sidebar-equipamentos,
+    .sidebar-mosaico {
+        position: static;
+        order: 2;
+        min-width: unset;
+        max-width: 100%;
+    }
+    
+    /* Header */
+    .header-logo {
+        width: 180px;
+        height: auto;
+    }
+    
+    /* Navegação */
+    nav a,
+    .main-nav a {
+        margin: 0 10px;
+        font-size: 0.85rem;
+    }
+    
+    /* Tipografia */
+    #quem-somos h1,
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+    
+    /* Página Contato */
+    .fale-principal,
     .sidebar-equipamentos {
         width: 100%;
-        max-width: 700px; /* No celular ele fica centralizado e elegante */
-        min-width: unset;
+        max-width: 100%;
     }
-}
-/* Responsividade:footer */
-@media (max-width: 768px) {
+    
+    .badges-foco {
+        flex-direction: column;
+    }
+    
+    /* Footer */
     .footer-container {
         flex-direction: column;
         text-align: center;
     }
-
+    
     .footer-col {
         margin-bottom: 20px;
     }
+    
+    .footer-col img,
+    .logo-footer {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
-/* Container Pai */
-.conteudo-principal-flex {
-    display: flex;
-    justify-content: space-between; /* Empurra o aside para a extremidade */
-    gap: 50px;                      /* Espaçamento generoso entre as colunas */
-    max-width: 1250px;              /* Um pouco mais largo para caber tudo bem */
-    margin: 40px auto;
-    padding: 0 30px;
-    align-items: flex-start;
-}
-/* Coluna de Texto (Esquerda) */
-.fale-principal {
-    flex: 1.8;      /* Diminuímos um pouco para sobrar mais para o lado */
-    min-width: 0;   /* Evita que o texto empurre o aside para fora */
-}
-/* Ajuste nos campos para acompanhar o novo respiro */
-.form-rs-quality {
-    gap: 20px; /* Mais espaço entre um campo e outro */
-}
-/* CONTAINER DO SLIDE (A MOLDURA) */
-.slider-fade-container {
-    width: 100%;
-    height: 150px; /* Mesma altura que você usava antes */
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider-fade-wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-/* Container da Sidebar */
-.sidebar-mosaico {
-    flex: 1;
-    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
-    padding: 20px;
-    border-radius: 15px;
-    height: fit-content; /* Ele cresce conforme as seções ao lado */
-    position: sticky;
-    top: 20px;
-}
-
-/* Configuração do Grid do Mosaico */
-.mosaico-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Divide em 2 colunas iguais */
-    grid-auto-rows: 120px; /* Define uma altura base para as linhas */
-    gap: 10px;
-}
-
-.foto-item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Não deixa a imagem esticar */
-    border-radius: 8px;
-    transition: transform 0.3s ease;
-}
-
-.foto-item img:hover {
-    transform: scale(1.05);
-    filter: brightness(1.1);
-}
-
-/* Classes para dar variedade ao mosaico */
-.foto-item.grande {
-    grid-row: span 2; /* Ocupa duas linhas de altura */
-}
-
-.foto-item.larga {
-    grid-column: span 2; /* Ocupa as duas colunas de largura */
-}
-
-/* ============================================================
-   3. SISTEMA DE SLIDER (Refatorado)
-   ============================================================ */
-/* Layout Lateral */
-.sidebar-slide {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 20px; /* Espaço entre os 3 quadros */
-}
-
-.quadro-destaque {
-    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
-    padding: 15px;
-    border-radius: 15px;
-    text-align: center;
-    border: 1px solid var(--cor0);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.slideshow-titulo-menor {
-    color: var(--cor0);
-    font-size: 0.9rem;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-/* Container do Slide (Área de Máscara) */
-.slider-vertical-container {
-    width: 100%;
-    height: 250px; /* Ajuste para a altura que desejar, ex: 300px */
-    overflow: hidden; /* ESSENCIAL: corta o que está fora */
-    position: relative;
-    background-color: #fff;
-    border: 2px solid var(--cor0);
-    border-radius: 10px;
-}
-/* Wrapper que movimenta as imagens */
-.slider-vertical-wrapper {
-    position: relative;
-    width: 100%;
-    height: 100%;
-}
-
-.slide-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    opacity: 0; /* Começam invisíveis */
-    transition: opacity 1s ease-in-out, transform 0.3s ease; /* Fade + seu hover */
-}
-/* Classe que o JavaScript vai adicionar para mostrar a foto */
-.slide-img.active {
-    opacity: 1;
-    z-index: 1; /* Garante que a foto ativa fique na frente */
-}
-/* Seu efeito de hover original adaptado */
-.slide-img.active:hover {
-    transform: translateY(-5px);
-    cursor: pointer;
-}
-/* Link de e-mail discreto */
-.contact-info a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: 500;
-}
-.contact-info a:hover {
-    text-decoration: underline;
-}
-/* Estilo para a coluna de contato */
-.contact-section p {
-    margin-bottom: 5px;
-    color: #ccc; /* Cor suave para o texto */
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    .site-header {
+        padding: 20px 0;
+    }
+    
+    .header-logo {
+        width: 150px;
+    }
+    
+    nav a,
+    .main-nav a {
+        margin: 0 5px;
+        font-size: 0.75rem;
+    }
+    
+    #quem-somos h1,
+    .titulo-principal {
+        font-size: 1.5rem;
+    }
+    
+    .mosaico-container {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 150px;
+    }
+    
+    .foto-item.grande,
+    .foto-item.larga {
+        grid-row: span 1;
+        grid-column: span 1;
+    }
 }
