@@ -1,5 +1,7 @@
+/* ============================================================
+                CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   ============================================================ */
 @charset "UTF-8";
-
 /* Reset e Box-Sizing */
 * {
     margin: 0;
@@ -22,7 +24,6 @@
     font-style: normal;
     font-display: swap;
 }
-
 /* Configurações Globais (SEO & UX) */
 :root {
     scroll-behavior: smooth;
@@ -41,17 +42,12 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;  
-    line-height: 1.6;
-   
+    line-height: 1.6;  
 }
 
-/* Imagens Responsivas */
-img {
-    max-width: 100%;
-    display: block;
-    height: auto;
-}
-
+/* ============================================================
+                               HEADER
+   ============================================================ */
 /* Configuração do header */
 .site-header {
     width: 100%;
@@ -61,7 +57,6 @@ img {
     padding: 30px 0;
     background: linear-gradient(to top, var(--cor3)0%, var(--cor0)100%);
 }
-
 /* O logo centralizado com suas dimensões */
 .header-logo {
     width: 250px;
@@ -69,7 +64,16 @@ img {
     object-fit: contain;
     display: block;
 }
+/* Imagens Responsivas */
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
 
+/* ============================================================
+                               NAV
+   ============================================================ */
 /* Estilo do Menu de Navegação */
 nav {
     background-color: var(--cor3);
@@ -94,6 +98,9 @@ nav a:hover {
     color: var(--cor0);
 }
 
+/* ============================================================
+                               MAIN
+   ============================================================ */
 /* Container principal organizando os dois lados */
 .main-layout {
     display: flex;
@@ -103,141 +110,10 @@ nav a:hover {
     margin: 40px auto;
     padding: 0 20px;
 }
-
-/* Container Pai */
-.conteudo-principal-flex {
-    display: flex;
-    justify-content: space-between; /* Empurra o aside para a extremidade */
-    gap: 50px;                      /* Espaçamento generoso entre as colunas */
-    max-width: 1250px;              /* Um pouco mais largo para caber tudo bem */
-    margin: 40px auto;
-    padding: 0 30px;
-    align-items: flex-start;
-}
-
-/* Coluna de Texto (Esquerda) */
-.fale-principal {
-    flex: 1.8;      /* Diminuímos um pouco para sobrar mais para o lado */
-    min-width: 0;   /* Evita que o texto empurre o aside para fora */
-}
-
-/* Aside (Direita) - O segredo para não ficar apertado */
-.sidebar-equipamentos {
-    flex: 1;              /* Proporção equilibrada */
-    min-width: 350px;     /* Garante que o formulário nunca fique menor que 350px */
-    max-width: 400px;     /* Evita que fique largo demais em telas gigantes */
-    
-    /* Mantendo o visual padronizado */
-    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
-    padding: 30px;        /* Aumentei o padding interno para dar respiro */
-    border-radius: 20px;
-    position: sticky;
-    top: 30px;
-    border: 1px solid var(--cor0);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-}
-
-/* Ajuste nos campos para acompanhar o novo respiro */
-.form-rs-quality {
-    gap: 20px; /* Mais espaço entre um campo e outro */
-}
-
-/* Responsividade: Quando a tela for pequena demais para os dois lados */
-@media (max-width: 1024px) {
-    .conteudo-principal-flex {
-        flex-direction: column;
-        align-items: center;
-        gap: 40px;
-    }
-    
-    .fale-principal, 
-    .sidebar-equipamentos {
-        width: 100%;
-        max-width: 700px; /* No celular ele fica centralizado e elegante */
-        min-width: unset;
-    }
-}
-
 /* Onde estão seus textos */
 .content-wrapper {
     flex: 2; /* Ocupa o dobro de espaço do aside */
     color: var(--cor3);
-}
-
-/* Estilização da Coluna Lateral */
-.sidebar-equipamentos {
-   flex: 1;
-    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
-    padding: 25px;
-    border-radius: 15px;
-    height: fit-content;
-    position: sticky;
-    top: 20px;
- }
-
-.sidebar-equipamentos h3 {
-    color: var(--cor0);
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.equipamento-item {
-   margin-bottom: 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: rgba(255, 255, 255, 0.1); /* Um brilho sutil de fundo */
-    padding: 15px;
-    border-radius: 10px;
-}
-
-.equipamento-item img {
-     max-width: 100%;
-    height: auto;          /* Deixa o navegador decidir a altura com base na largura */
-    max-height: 150px;     /* Mas limita para não ficar gigante */
-    object-fit: contain;
-}
-
-/* CONTAINER DO SLIDE (A MOLDURA) */
-.slider-fade-container {
-    width: 100%;
-    height: 150px; /* Mesma altura que você usava antes */
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.slider-fade-wrapper {
-    width: 100%;
-    height: 100%;
-    position: relative;
-}
-
-.equipamento-item img:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-}
-
-.equipamento-item p {
-   margin-top: 12px;
-    color: var(--cor0);
-    font-size: 0.85rem;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-/* Ajuste para Celulares (Empilha um sobre o outro) */
-@media (max-width: 768px) {
-  .main-layout {
-        flex-direction: column; /* Empilha as colunas */
-    }
-    
-    .sidebar-equipamentos {
-        position: static; /* Remove o efeito sticky no celular */
-        order: 2;         /* Garante que fique embaixo do texto */
-    }
 }
 
 #quem-somos h1 {
@@ -326,7 +202,283 @@ blockquote {
     border-bottom: 2px solid var(--cor2);
     transform: translateX(5px); /* Pequeno movimento para a direita no hover */
 }
+/* Aside (Direita) - O segredo para não ficar apertado */
+.sidebar-equipamentos {
+    flex: 1;              /* Proporção equilibrada */
+    min-width: 350px;     /* Garante que o formulário nunca fique menor que 350px */
+    max-width: 400px;     /* Evita que fique largo demais em telas gigantes */
+    
+    /* Mantendo o visual padronizado */
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 30px;        /* Aumentei o padding interno para dar respiro */
+    border-radius: 20px;
+    position: sticky;
+    top: 30px;
+    border: 1px solid var(--cor0);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+/* Estilização da Coluna Lateral */
+.sidebar-equipamentos {
+   flex: 1;
+    background: linear-gradient(to bottom, var(--cor3), var(--cor2));
+    padding: 25px;
+    border-radius: 15px;
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+ }
 
+.sidebar-equipamentos h3 {
+    color: var(--cor0);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.equipamento-item {
+   margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Um brilho sutil de fundo */
+    padding: 15px;
+    border-radius: 10px;
+}
+.equipamento-item p {
+   margin-top: 12px;
+    color: var(--cor0);
+    font-size: 0.85rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.equipamento-item img {
+     max-width: 100%;
+    height: auto;          /* Deixa o navegador decidir a altura com base na largura */
+    max-height: 150px;     /* Mas limita para não ficar gigante */
+    object-fit: contain;
+}
+
+.equipamento-item img:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+
+/* ============================================================
+                            FOOTER
+   ============================================================ */
+
+footer {
+    background-color: var(--cor3);
+    color: white;
+    padding: 60px 20px 20px 20px;
+    font-family: var(--font-pardao);
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-col img {
+    margin-top: -30px;
+    position: relative;
+    z-index: 1;
+    display: block;
+    max-width: 150px;
+    margin-bottom: 15px;
+}
+/* Estilo dos títulos das colunas */
+.footer-col h4 {
+    color: var(--cor0);
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Lista de links e redes sociais */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col a{
+    color: #ccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-col a:hover {
+    color: var(--cor0);
+}
+/* Estilo para coluna de enderenço */
+address {
+    font-style: normal;
+    line-height: 1.8;
+    color: #ddd;
+}
+/* Coluna de Desenvolvimento */
+.dev-link {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 5px 12px;
+    border: 1px solid var(--cor1);
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+/* Estilo geral da coluna */
+.footer-col p {
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+/* Estilo específico para o E-mail */
+.footer-email {
+    display: block;
+    margin-bottom: 15px;
+    color: #00a8ff; /* Cor de destaque */
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: opacity 0.3s;
+}
+
+.footer-email:hover {
+    opacity: 0.8;
+    text-decoration: underline;
+}
+/* Botão do GitHub - Estilo "Clean" */
+.footer-portfolio {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.footer-portfolio:hover {
+    background-color: #fff;
+    color: #000;
+}
+/* Rodapé final Copyright */
+.footer-bottom {
+    max-width: 1200px;
+    margin: 40px auto 0 auto;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    text-align: center;
+    font-size: 0.8rem;
+    color: #888;
+}
+/* Botão do GitHub destacado */
+.portfolio-btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #24292e; /* Cor clássica do GitHub */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background 0.3s ease;
+}
+
+.portfolio-btn:hover {
+    background-color: #444d56;
+    color: #fff;
+}
+
+/* ============================================================
+                            @MEDIA
+   ============================================================ */
+/* Responsividade:main-layout (index.html)  */
+@media (max-width: 768px) {
+  .main-layout {
+        flex-direction: column; /* Empilha as colunas */
+    }
+    
+    .sidebar-equipamentos {
+        position: static; /* Remove o efeito sticky no celular */
+        order: 2;         /* Garante que fique embaixo do texto */
+    }
+}
+/* Responsividade:main (contato.html) */
+@media (max-width: 1024px) {
+    .conteudo-principal-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .fale-principal, 
+    .sidebar-equipamentos {
+        width: 100%;
+        max-width: 700px; /* No celular ele fica centralizado e elegante */
+        min-width: unset;
+    }
+}
+/* Responsividade:footer */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-col {
+        margin-bottom: 20px;
+    }
+}
+
+/* Container Pai */
+.conteudo-principal-flex {
+    display: flex;
+    justify-content: space-between; /* Empurra o aside para a extremidade */
+    gap: 50px;                      /* Espaçamento generoso entre as colunas */
+    max-width: 1250px;              /* Um pouco mais largo para caber tudo bem */
+    margin: 40px auto;
+    padding: 0 30px;
+    align-items: flex-start;
+}
+/* Coluna de Texto (Esquerda) */
+.fale-principal {
+    flex: 1.8;      /* Diminuímos um pouco para sobrar mais para o lado */
+    min-width: 0;   /* Evita que o texto empurre o aside para fora */
+}
+/* Ajuste nos campos para acompanhar o novo respiro */
+.form-rs-quality {
+    gap: 20px; /* Mais espaço entre um campo e outro */
+}
+/* CONTAINER DO SLIDE (A MOLDURA) */
+.slider-fade-container {
+    width: 100%;
+    height: 150px; /* Mesma altura que você usava antes */
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-fade-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
 /* Container da Sidebar */
 .sidebar-mosaico {
     flex: 1;
@@ -368,6 +520,9 @@ blockquote {
     grid-column: span 2; /* Ocupa as duas colunas de largura */
 }
 
+/* ============================================================
+   3. SISTEMA DE SLIDER (Refatorado)
+   ============================================================ */
 /* Layout Lateral */
 .sidebar-slide {
     flex: 1;
@@ -391,7 +546,6 @@ blockquote {
     text-transform: uppercase;
     margin-bottom: 10px;
 }
-
 /* Container do Slide (Área de Máscara) */
 .slider-vertical-container {
     width: 100%;
@@ -402,7 +556,6 @@ blockquote {
     border: 2px solid var(--cor0);
     border-radius: 10px;
 }
-
 /* Wrapper que movimenta as imagens */
 .slider-vertical-wrapper {
     position: relative;
@@ -420,197 +573,27 @@ blockquote {
     opacity: 0; /* Começam invisíveis */
     transition: opacity 1s ease-in-out, transform 0.3s ease; /* Fade + seu hover */
 }
-
 /* Classe que o JavaScript vai adicionar para mostrar a foto */
 .slide-img.active {
     opacity: 1;
     z-index: 1; /* Garante que a foto ativa fique na frente */
 }
-
 /* Seu efeito de hover original adaptado */
 .slide-img.active:hover {
     transform: translateY(-5px);
     cursor: pointer;
 }
-
-/* Ajuste para dispositivos móveis */
-@media (max-width: 768px) {
-    .sidebar-slide {
-        position: static;
-        order: 2; /* Fica abaixo do texto no celular */
-    }
-}
-
-/* footer */
-footer {
-    background-color: var(--cor3);
-    color: white;
-    padding: 60px 20px 20px 20px;
-    font-family: var(--font-pardao);
-}
-
-.footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
-}
-
-.footer-col {
-    flex: 1;
-    min-width: 200px;
-}
-
-.footer-col img {
-    margin-top: -30px;
-    position: relative;
-    z-index: 1;
-    display: block;
-    max-width: 150px;
-    margin-bottom: 15px;
-}
-
-/* Estilo dos títulos das colunas */
-.footer-col h4 {
-    color: var(--cor0);
-    margin-bottom: 20px;
-    font-size: 1.1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-
-/* Lista de links e redes sociais */
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 10px;
-}
-
-.footer-col a{
-    color: #ccc;
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-col a:hover {
-    color: var(--cor0);
-}
-
-/* Estilo para coluna de enderenço */
-address {
-    font-style: normal;
-    line-height: 1.8;
-    color: #ddd;
-}
-
-/* Coluna de Desenvolvimento */
-.dev-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 5px 12px;
-    border: 1px solid var(--cor1);
-    border-radius: 4px;
-    font-size: 0.85rem;
-}
-
-/* Estilo geral da coluna */
-.footer-col p {
-    margin-bottom: 8px;
-    font-size: 14px;
-}
-
 /* Link de e-mail discreto */
 .contact-info a {
     color: #007bff;
     text-decoration: none;
     font-weight: 500;
 }
-
 .contact-info a:hover {
     text-decoration: underline;
 }
-
-/* Botão do GitHub destacado */
-.portfolio-btn {
-    display: inline-block;
-    margin-top: 15px;
-    padding: 10px 20px;
-    background-color: #24292e; /* Cor clássica do GitHub */
-    color: #ffffff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-weight: bold;
-    font-size: 14px;
-    transition: background 0.3s ease;
-}
-
-.portfolio-btn:hover {
-    background-color: #444d56;
-    color: #fff;
-}
-
 /* Estilo para a coluna de contato */
 .contact-section p {
     margin-bottom: 5px;
     color: #ccc; /* Cor suave para o texto */
-}
-
-/* Estilo específico para o E-mail */
-.footer-email {
-    display: block;
-    margin-bottom: 15px;
-    color: #00a8ff; /* Cor de destaque */
-    text-decoration: none;
-    font-size: 0.95rem;
-    transition: opacity 0.3s;
-}
-
-.footer-email:hover {
-    opacity: 0.8;
-    text-decoration: underline;
-}
-
-/* Botão do GitHub - Estilo "Clean" */
-.footer-portfolio {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: transparent;
-    border: 1px solid #fff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 4px;
-    font-size: 0.85rem;
-    transition: all 0.3s ease;
-}
-
-.footer-portfolio:hover {
-    background-color: #fff;
-    color: #000;
-}
-
-/* Rodapé final Copyright */
-.footer-bottom {
-    max-width: 1200px;
-    margin: 40px auto 0 auto;
-    padding-top: 20px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    text-align: center;
-    font-size: 0.8rem;
-    color: #888;
-}
-
-/* Responsividade: Ajuste para celulares */
-@media (max-width: 768px) {
-    .footer-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .footer-col {
-        margin-bottom: 20px;
-    }
 }
