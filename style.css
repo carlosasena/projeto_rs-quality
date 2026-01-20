@@ -63,7 +63,7 @@ img {
    3. HEADER
    ============================================================ */
 .site-header {
-    width: 100%;
+    width:100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -627,7 +627,7 @@ footer {
     position: relative;
     z-index: 1;
     display: block;
-    max-width: 150px;
+    max-width: 300px;
     margin-bottom: 15px;
 }
 
@@ -670,8 +670,9 @@ address {
 }
 
 .footer-col p {
-    margin-bottom: 8px;
+    margin: 0; /* Remove as margens automáticas do navegador */
     font-size: 14px;
+    line-height: 1.2; /* Diminuir isso também aproxima o texto da imagem */
 }
 
 .portifolio-btn,
