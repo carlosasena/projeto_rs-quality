@@ -47,8 +47,8 @@ document.addEventListener('DOMContentLoaded', () => {
             imagens[indice].classList.add('active');
         }
 
-        // Alterna a imagem a cada 3 segundos (3000ms)
-        setInterval(alternar, 3000);
+        // Alterna a imagem a cada 5 segundos (3000ms)
+        setInterval(alternar, 5000);
     }
 
     // ========================================
