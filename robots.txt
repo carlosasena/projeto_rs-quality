@@ -1,0 +1,33 @@
+# ===================================================
+# RS Quality - Robots.txt
+# ===================================================
+
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /administrator/
+Disallow: /includes/
+Disallow: /tmp/
+Disallow: /backup/
+
+Allow: /css/
+Allow: /js/
+Allow: /image/
+Allow: /fonts/
+
+Crawl-delay: 2
+
+Sitemap: https://rsseng.com.br/Projetos_WEB/RSQuality/sitemap.xml
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+Crawl-delay: 3
